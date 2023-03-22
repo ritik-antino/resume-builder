@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <div style="display:flex;justify-content:space-between"><img
+            src="https://assets.unlayer.com/stock-templates1679297419809-Screenshot%20from%202023-03-20%2013-00-13.png" />
+        <div
+            style="display:flex;flex-direction:column;align-items:center;justify-content:center;font-size: small;padding-top: 5px;">
+            Website: <a style="color:blue"> www.antino.com</a> Email:<a style="color:blue"> info@antino.io</a>
+        </div>    
+    </div>
+    <div style=" border: 1px solid grey;"></div>
+</header>
+<style>
+    hr {
+        margin-top: 5rem;
+    }
+
+    .List {}
+
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .desc {
+        padding: 5px
+    }
+</style>
+
+<body>
+
+    <div class="header">
+
+        <div class="desc">
+
+            <strong> Name: </strong>
+            <%= name %>
+        </div>
+
+        <div class="desc">
+            <strong>
+                Professional Experience:
+            </strong>
+            <%= experience %>
+        </div>
+        <div class="desc">
+            <strong>
+                Designation:
+            </strong>
+            <%=designation%>
+        </div>
+
+        <div class="desc">
+            <strong>
+                Description:
+            </strong>
+            <%= description %>
+        </div>
+    </div>
+    <% for (let i=0; i < projects.length; i++) { %>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <table>
+                <thead>td
+                    <tr>
+                        <td><strong>Name of project</strong> </td>
+                        <td>
+                            <%=projects[i].title%>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tech Used</strong></td>
+                        <td>
+                            <%=projects[i].techStack%>
+                        </td>
+                    </tr>
+                    <%if(projects[i].duration) {%>
+                        <tr>
+                            <td><strong>Duration</strong></td>
+                            <td>
+                                <%=projects[i].duration%>
+                            </td>
+                        </tr>
+                        <%}%>
+                            <tr>
+                                <td><strong>Description</strong></td>
+                                <td>
+                                    <%=projects[i].shortDescription%>
+                                </td>
+                            </tr>
+                </thead>
+                <div>
+                    <h4>
+                        <%=i+1%>.)
+                    </h4>
+                </div>
+                <% } %>
+            </table>
+        </div>
+</body>
+
+</html>
